@@ -331,12 +331,17 @@ a {
 .lead__title {
     margin: 0 0 1.5rem;
     font-family: var(--serif);
-    font-size: clamp(2.4rem, 6.6vw, 4.5rem);
+    font-size: clamp(2rem, 4.4vw, 3.5rem);
     font-weight: 600;
-    line-height: 1.02;
+    line-height: 1.06;
     letter-spacing: -0.024em;
     text-wrap: balance;
     max-width: 24ch;
+}
+
+.lead__title.is-short {
+    font-size: clamp(2.4rem, 6.6vw, 4.5rem);
+    line-height: 1.02;
 }
 
 .lead__title a {
@@ -488,6 +493,35 @@ a {
     white-space: nowrap;
 }
 
+/* 首页底部的「更多」入口 */
+.more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 0 1.65rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink);
+    transition: color 0.18s ease;
+}
+
+.more:hover {
+    color: var(--accent);
+}
+
+.more__arrow {
+    font-size: 0.9375rem;
+    letter-spacing: 0;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.more:hover .more__arrow {
+    transform: translateX(5px);
+}
+
 /* --------------------------------------------------------------------------
    8. 首页简介条
    -------------------------------------------------------------------------- */
@@ -496,7 +530,7 @@ a {
     grid-template-columns: 3.5rem minmax(0, 1fr);
     gap: 1.75rem;
     align-items: start;
-    margin-top: clamp(2.75rem, 6vw, 4.5rem);
+    margin-top: clamp(1.75rem, 4vw, 2.75rem);
     padding: clamp(2rem, 4vw, 2.75rem) 0 0;
     border-top: 1px solid var(--ink);
 }
@@ -1068,6 +1102,10 @@ a.pn__item:hover {
 }
 
 /* 归档 */
+.archive-list--top {
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+}
+
 .year {
     display: grid;
     grid-template-columns: 7rem minmax(0, 1fr);

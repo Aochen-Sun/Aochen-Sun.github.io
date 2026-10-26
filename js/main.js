@@ -100,6 +100,16 @@
         }
     }
 
+    /* ------------------------------------------- 头条字号：短标题放大一档 */
+    var leadTitle = document.querySelector('.lead__title');
+
+    if (leadTitle) {
+        var leadText = (leadTitle.textContent || '').trim();
+        if (leadText && leadText.length <= 30) {
+            leadTitle.classList.add('is-short');
+        }
+    }
+
     /* ------------------------------------------------- 外部链接补 rel（安全） */
     var host = window.location.hostname;
 
